@@ -9,7 +9,7 @@ var confirmLowerCase;
 // Password variable values
 character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 // Uppercase conversion
 space = [];
@@ -38,7 +38,7 @@ enter = parseInt(prompt("How many characters would you like for your password? P
 if (!enter) {
   alert ("Please enter a value.");
 } else if (enter < 8 || enter > 128) {
-  enter = parseInt(prompt("Please enter a value between 8 to 128 characters.")
+  enter = parseInt(prompt("Please enter a value between 8 to 128 characters."));
 } else {
   confirmNumber = confirm("Will it contain number/s?");
   confirmCharacter = confirm("Will it contain special character/s?");
@@ -46,6 +46,10 @@ if (!enter) {
   confirmLowerCase = confirm("Will it contain lower case letter/s?")
 };
 
+  // Else if for 4 negative
+  if (!confirmNumber && !confirmCharacter && !confirmUpperCase && !confirmLowerCase) {
+    choices = alert("Please choose a password criteria.");
+  }
 }
 
 
