@@ -106,6 +106,13 @@ else if (confirmLowerCase) {
     choices = alphabet;
 }
 
+// For uppercase conversion
+else if (confirmUppercase) {
+  choices = space.concat(alphabet2);
+};
+
+// Array placeholder for length
+var password =[];
 
 }
 
