@@ -1,8 +1,8 @@
 // Assignment code here
 // User input variables
 var enter;
-var confirmNumber;
 var confirmCharacter;
+var confirmNumber;
 var confirmUpperCase;
 var confirmLowerCase;
 
@@ -39,11 +39,12 @@ if (!enter) {
   alert ("Please enter a value.");
 } else if (enter < 8 || enter > 128) {
   enter = parseInt(prompt("Please enter a value between 8 to 128 characters."));
-} else {
+} 
+else {
   confirmNumber = confirm("Will it contain number/s?");
   confirmCharacter = confirm("Will it contain special character/s?");
   confirmUpperCase = confirm("Will it contain uppercase letter/s?");
-  confirmLowerCase = confirm("Will it contain lower case letter/s?")
+  confirmLowerCase = confirm("Will it contain lower case letter/s?");
 };
 
   // Else if for 4 negative
@@ -114,24 +115,19 @@ else if (confirmUppercase) {
 // Array placeholder for length
 var password =[];
 
+// Random selection variables
+  for (var i=0; i<enter; i++) {
+    var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+    password.push(pickChoices);
+  }
+
+  // To join password array and convert to string
+  var ps = password.join("");
+  UserInput(ps);
+  return ps;
 }
 
-
-
-
-
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+// Put password into textbox
+function UserInput(ps) {
+  document.getElementById("password").textContent = ps;
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
