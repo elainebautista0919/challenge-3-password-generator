@@ -47,9 +47,66 @@ if (!enter) {
 };
 
   // Else if for 4 negative
-  if (!confirmNumber && !confirmCharacter && !confirmUpperCase && !confirmLowerCase) {
+  if (!confirmCharacter && !confirmNumber && !confirmUpperCase && !confirmLowerCase) {
     choices = alert("Please choose a password criteria.");
   }
+
+  // Else if for 4 positive
+  else if (confirmCharacter && confirmNumber && confirmUpperCase && confirmLowerCase) {
+
+    choices = character.concat(number, alphabet, alphabet2);
+}
+
+  // Else if for 3 positive
+  else if (confirmCharacter && confirmNumber && confirmUpperCase) {
+
+    choices = character.concat(number, alphabet2);
+}
+else if (confirmCharacter && confirmNumber && confirmLowerCase) {
+
+  choices = character.concat(number, alphabet);
+}
+else if (confirmNumber && confirmUpperCase && confirmLowerCase) {
+
+  choices = number.concat(alphabet, alphabet2);
+}
+else if (confirmCharacter && confirmUpperCase && confirmLowerCase) {
+
+  choices = character.concat(alphabet, alphabet2);
+}
+
+  // Else if for 2 positive
+  else if (confirmCharacter && confirmNumber) {
+    choices = character.concat(number);
+} 
+else if (confirmCharacter && confirmLowerCase) {
+    choices = character.concat(alphabet);
+} 
+else if (confirmCharacter && confirmUpperCase) {
+    choices = character.concat(alphabet2);
+}
+else if (confirmLowerCase && confirmNumber) {
+    choices = alphabet.concat(number);
+} 
+else if (confirmLowerCase && confirmUpperCase) {
+    choices = alphabet.concat(alphabet2);
+} 
+else if (confirmNumber && confirmUpperCase) {
+    choices = number.concat(alphabet2);
+}
+
+  //Else if for 1 positive
+  else if (confirmCharacter) {
+    choices = character;
+}
+else if (confirmNumber) {
+    choices = number;
+}
+else if (confirmLowerCase) {
+    choices = alphabet;
+}
+
+
 }
 
 
